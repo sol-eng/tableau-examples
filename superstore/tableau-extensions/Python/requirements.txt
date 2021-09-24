@@ -1,10 +1,14 @@
 aiofiles==0.7.0
+asgiref==3.4.1
 certifi==2021.5.30
 charset-normalizer==2.0.6
+click==8.0.1
 commonmark==0.9.1
 fastapi==0.68.1
-fastapitableau @ git+https://github.com/rstudio/fastapitableau.git@f770ff8442ed6a6cb6ec1d33cd2978cbb0427202
+fastapitableau==0.1.0
+h11==0.12.0
 idna==3.2
+importlib-metadata==4.8.1
 Jinja2==3.0.1
 joblib==1.0.1
 MarkupSafe==2.0.1
@@ -14,7 +18,14 @@ pydantic==1.8.2
 python-dateutil==2.8.2
 pytz==2021.1
 requests==2.26.0
+scikit-learn==0.24.2
+scipy==1.7.1
 six==1.16.0
+sklearn==0.0
 starlette==0.14.2
+threadpoolctl==2.2.0
+typing==3.7.4.3
 typing-extensions==3.10.0.2
 urllib3==1.26.7
+uvicorn==0.15.0
+zipp==3.5.0
