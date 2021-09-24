@@ -2,6 +2,7 @@ from fastapitableau import FastAPITableau
 from joblib import load
 from pydantic import BaseModel
 import pandas as pd
+from typing import List
 
 # Load model
 model = load("model.joblib")
@@ -15,11 +16,11 @@ app = FastAPITableau(
 
 # Define input object
 class InputData(BaseModel):
-    days_to_ship_actual: list[int]
-    days_to_ship_scheduled: list[int]
-    quantity: list[int]
-    sales: list[float]
-    discount: list[float]
+    days_to_ship_actual: List[int]
+    days_to_ship_scheduled: List[int]
+    quantity: List[int]
+    sales: List[float]
+    discount: List[float]
 
 @app.post("/predict")
 async def predict(data: InputData):
