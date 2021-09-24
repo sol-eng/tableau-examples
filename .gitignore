@@ -6,3 +6,4 @@
 *.nb.html
 rsconnect-python/
 *.twbr
+.vscode
