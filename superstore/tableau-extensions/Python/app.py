@@ -7,6 +7,18 @@ from typing import List
 # Load model
 model = load("model.joblib")
 
+# Define model_pipline
+def model_pipeline(dict):
+    model_data = pd.DataFrame(dict)
+    model_data["ship_diff"] = model_data.days_to_ship_actual - model_data.days_to_ship_scheduled
+    pred_columns = [
+        "ship_diff",
+        "quantity",
+        "sales",
+        "discount"
+    ]
+    return model.predict(model_data.loc[:, pred_columns]).tolist() 
+
 # Define the extension
 app = FastAPITableau(
     title = "Predicted Profit",
@@ -22,14 +34,23 @@ class InputData(BaseModel):
     sales: List[float]
     discount: List[float]
 
-@app.post("/predict")
-async def predict(data: InputData):
-    model_data = pd.DataFrame(data.dict())
-    model_data["ship_diff"] = model_data.days_to_ship_actual - model_data.days_to_ship_scheduled
-    pred_columns = [
-        "ship_diff",
-        "quantity",
-        "sales",
-        "discount"
-    ]
-    return model.predict(model_data.loc[:, pred_columns]).tolist()
+# @app.post("/predict")
+# async def predict(data: InputData)->List[float]:
+#     return model_pipeline(data.dict())
+
+@app.post("/simple-predict")
+async def simple_predict(
+        days_to_ship_actual: List[int],
+        days_to_ship_scheduled: List[int],
+        quantity: List[int],
+        sales: List[float],
+        discount: List[float]
+    )->List[float]:
+        data = {
+            "days_to_ship_actual": days_to_ship_actual,
+            "days_to_ship_scheduled": days_to_ship_scheduled,
+            "quantity": quantity,
+            "sales": sales,
+            "discount": discount
+        }
+        return model_pipeline(data)
