@@ -1,0 +1,20 @@
+aiofiles==0.7.0
+certifi==2021.5.30
+charset-normalizer==2.0.6
+commonmark==0.9.1
+fastapi==0.68.1
+fastapitableau @ git+https://github.com/rstudio/fastapitableau.git@f770ff8442ed6a6cb6ec1d33cd2978cbb0427202
+idna==3.2
+Jinja2==3.0.1
+joblib==1.0.1
+MarkupSafe==2.0.1
+numpy==1.21.2
+pandas==1.3.3
+pydantic==1.8.2
+python-dateutil==2.8.2
+pytz==2021.1
+requests==2.26.0
+six==1.16.0
+starlette==0.14.2
+typing-extensions==3.10.0.2
+urllib3==1.26.7

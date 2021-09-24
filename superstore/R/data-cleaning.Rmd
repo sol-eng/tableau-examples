@@ -1,0 +1,32 @@
+---
+title: "Data Cleaning"
+output: html_notebook
+---
+
+```{r setup}
+# Packages ----
+library(tidyverse)
+```
+
+
+```{r}
+orders <- read_csv("../data/orders.csv") |> 
+  janitor::clean_names() |> 
+  mutate(
+    order_date = lubridate::mdy(order_date),
+    ship_date = lubridate::mdy(ship_date),
+    discount = as.numeric(str_replace_all(discount, fixed("%"), "")) / 100,
+    profit = as.numeric(str_replace_all(str_replace(profit, "[(]", "-"), "[$,)]", "")),
+    sales = as.numeric(str_replace_all(sales, "[$,]", "")),
+    sales_forecast = as.numeric(str_replace_all(sales_forecast, "[$,]", ""))
+  )
+```
+
+```{r}
+glimpse(orders)
+```
+
+```{r}
+write_csv(orders, "../data/clean-orders.csv")
+```
+

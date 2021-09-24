@@ -1,0 +1,51 @@
+---
+title: "Superstore EDA"
+output: html_notebook
+---
+
+```{r setup}
+# Packages
+library(tidyverse)
+library(outForest)
+```
+
+```{r}
+read_csv("../data/orders.csv") |> 
+  head(20)
+```
+
+
+```{r data}
+orders <- read_csv("../data/clean-orders.csv")
+```
+
+```{r}
+orders |> 
+  head(20) |> 
+  select(row_id, profit, sales, sales_forecast)
+```
+
+```{r}
+names(orders)
+```
+
+This plot appears in the default Superstore Tableau dashboard. Can this plot be supplemented with real time analysis from R?
+```{r}
+orders |> 
+  mutate(profit_ratio = profit / sum(profit)) |> 
+  ggplot(aes(x = sales, y = profit, fill = profit_ratio)) +
+  geom_point() +
+  theme_minimal()
+```
+
+
+```{r}
+sales_profit <- orders |> 
+  select(sales, profit)
+
+out <- outForest(sales_profit)
+out
+
+outliers(out)
+```
+
