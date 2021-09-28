@@ -25,8 +25,8 @@ app = FastAPITableau(
     version = "0.1.0"
 )
 
-@app.post("/simple-predict")
-async def simple_predict(
+@app.post("/predict")
+async def predict(
         days_to_ship_actual: List[int],
         days_to_ship_scheduled: List[int],
         quantity: List[int],
