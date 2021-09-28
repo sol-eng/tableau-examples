@@ -11,16 +11,16 @@ library(tidyverse)
 #* @tableauArg profit:numeric Numeric values representing profit for a given transaction
 #* @tableauReturn character A vector indicting the outlier status of each original obesrvation
 #* @post /detect-outliers
-\(sales, profit) {
+function(sales, profit) {
   dat <- tibble(sales, profit)
   out <- outForest(dat)
-  outlier_rows <- outliers(out) |>
-    select(row) |>
+  outlier_rows <- outliers(out) %>%
+    select(row) %>%
     distinct()
 
-  dat |>
+  dat %>%
     mutate(row = 1:n(),
-           outlier = row %in% outlier_rows$row) |>
+           outlier = row %in% outlier_rows$row) %>%
     pull(outlier)
 }
 
