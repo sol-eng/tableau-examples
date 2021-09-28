@@ -1,6 +1,5 @@
 from fastapitableau import FastAPITableau
 from joblib import load
-from pydantic import BaseModel
 import pandas as pd
 from typing import List
 
@@ -25,18 +24,6 @@ app = FastAPITableau(
     description = "A simple linear prediction of sales profit given new input data",
     version = "0.1.0"
 )
-
-# Define input object
-class InputData(BaseModel):
-    days_to_ship_actual: List[int]
-    days_to_ship_scheduled: List[int]
-    quantity: List[int]
-    sales: List[float]
-    discount: List[float]
-
-# @app.post("/predict")
-# async def predict(data: InputData)->List[float]:
-#     return model_pipeline(data.dict())
 
 @app.post("/simple-predict")
 async def simple_predict(
