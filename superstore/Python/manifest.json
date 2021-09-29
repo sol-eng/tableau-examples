@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "metadata": {
+    "appmode": "python-api",
+    "entrypoint": "app"
+  },
+  "locale": "en_US.UTF-8",
+  "python": {
+    "version": "3.9.7",
+    "package_manager": {
+      "name": "pip",
+      "version": "21.2.4",
+      "package_file": "requirements.txt"
+    }
+  },
+  "files": {
+    "requirements.txt": {
+      "checksum": "ea02b7b6abe9af840f5e71c8dfa59c8f"
+    },
+    "app.py": {
+      "checksum": "9b94906fc5c9033b822979b6ea2264f1"
+    },
+    "model-training.ipynb": {
+      "checksum": "4e28a8d5d7b5caca6036a11e936839b3"
+    },
+    "model.joblib": {
+      "checksum": "c641420b6fef6296df7b81d41b2fe410"
+    }
+  }
+}

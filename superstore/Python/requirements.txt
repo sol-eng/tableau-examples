@@ -5,7 +5,7 @@ charset-normalizer==2.0.6
 click==8.0.1
 commonmark==0.9.1
 fastapi==0.68.1
-fastapitableau @ git+https://github.com/rstudio/fastapitableau@e38aa36fbfcf79f71c0c0f8e0ea6933c5e8f24ef
+fastapitableau==1.0.0
 h11==0.12.0
 idna==3.2
 Jinja2==3.0.1

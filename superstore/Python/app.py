@@ -16,7 +16,7 @@ def model_pipeline(dict):
         "sales",
         "discount"
     ]
-    return model.predict(model_data.loc[:, pred_columns]).tolist() 
+    return model.predict(model_data.loc[:, pred_columns]).tolist()
 
 # Define the extension
 app = FastAPITableau(
