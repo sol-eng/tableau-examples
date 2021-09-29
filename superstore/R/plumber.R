@@ -1,7 +1,7 @@
 library(plumber)
 library(plumbertableau)
 library(outForest)
-library(tidyverse)
+library(dplyr)
 
 #* @apiTitle Outlier Detection for Tableau
 #* @apiDescription Detect outliers in real-time on Tableau data using a Random Forest
@@ -9,7 +9,7 @@ library(tidyverse)
 #* Calculate outliers on input data
 #* @tableauArg sales:numeric Numeric values representing sales for a given transaction
 #* @tableauArg profit:numeric Numeric values representing profit for a given transaction
-#* @tableauReturn character A vector indicting the outlier status of each original obesrvation
+#* @tableauReturn logical A vector indicating the outlier status of each original observation
 #* @post /detect-outliers
 function(sales, profit) {
   dat <- tibble(sales, profit)

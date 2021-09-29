@@ -10,13 +10,13 @@ library(outForest)
 ```
 
 ```{r}
-read_csv("../data/orders.csv") |> 
+read_csv("orders.csv") |> 
   head(20)
 ```
 
 
 ```{r data}
-orders <- read_csv("../data/clean-orders.csv")
+orders <- read_csv("clean-orders.csv")
 ```
 
 ```{r}

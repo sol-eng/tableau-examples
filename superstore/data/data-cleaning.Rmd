@@ -10,7 +10,7 @@ library(tidyverse)
 
 
 ```{r}
-orders <- read_csv("../data/orders.csv") |> 
+orders <- read_csv("orders.csv") |> 
   janitor::clean_names() |> 
   mutate(
     order_date = lubridate::mdy(order_date),
@@ -27,6 +27,6 @@ glimpse(orders)
 ```
 
 ```{r}
-write_csv(orders, "../data/clean-orders.csv")
+write_csv(orders, "clean-orders.csv")
 ```
 
