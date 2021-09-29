@@ -4,7 +4,7 @@
 .Ruserdata
 .venv/
 *.nb.html
-rsconnect-python/
+rsconnect*/
 *.twbr
 .vscode
 __pycache__/
