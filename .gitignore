@@ -8,3 +8,4 @@ rsconnect*/
 *.twbr
 .vscode
 __pycache__/
+.Renviron
