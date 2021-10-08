@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "metadata": {
+    "appmode": "python-fastapi",
+    "entrypoint": "app"
+  },
+  "locale": "en_US.UTF-8",
+  "python": {
+    "version": "3.9.7",
+    "package_manager": {
+      "name": "pip",
+      "version": "21.2.4",
+      "package_file": "requirements.txt"
+    }
+  },
+  "files": {
+    "requirements.txt": {
+      "checksum": "41d6833db85777956459720bceed6876"
+    },
+    "app.py": {
+      "checksum": "21cf77196fb35ed4c4f7ddd7f9d972b2"
+    }
+  }
+}
