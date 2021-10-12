@@ -8,9 +8,11 @@ Tableau environment. One option is to register for the [Tableau Developer
 Program](https://www.tableau.com/developer), which will give you access to your
 own Tableau Online sandbox.
 
-Once you have access to Tableau, each example in this repository has a Tableau
-workbook in the `Tableau/` that can used to showcase the extensions from the
-example.
+Once you have access to Tableau, you can follow the instrucitons to [configure
+Tableau with RStudio
+Connect](https://docs.rstudio.com/rsc/integration/tableau/). Each example in
+this repository has a Tableau workbook in the `Tableau/` that can used to
+showcase the extensions from the example.
 
 
 ### [Capitalize](capitalize/)
