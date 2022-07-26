@@ -13,7 +13,7 @@ app = FastAPITableau(
 @app.post("/rf")
 def rf(x: List[float], y: List[float]) -> List[float]:
     X = np.array(x).reshape(-1, 1)
-    regr = RandomForestRegressor(max_depth = 2, random_state = 0)
+    regr = RandomForestRegressor()
     regr.fit(X, y)
     preds = regr.predict(X)
     return preds.tolist()
