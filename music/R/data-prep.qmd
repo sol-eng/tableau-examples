@@ -29,6 +29,18 @@ music <- music |>
   filter(!is.na(music_genre))
 ```
 
+Explore distribution of each feature
+
+```{r}
+music |> 
+  select_if(is.numeric) |> 
+  select(-instance_id) |> 
+  pivot_longer(cols = everything(), names_to = "feature") |> 
+  ggplot(aes(x = feature, y = value)) +
+  geom_boxplot() + 
+  facet_wrap(~feature, scales = "free")
+```
+
 Write out updated data
 
 ```{r}
