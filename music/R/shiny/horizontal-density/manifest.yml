@@ -1,0 +1,20 @@
+extension_id: com.rstudio.extensions.horizontal-density-plot
+extension_version: 0.1.0
+name: Horizontal Density Plot
+description: Density Plot for Tableau
+extended_description: |
+  An extension for creating a horizontal density plot for use within Tablaeu
+  workbooks.
+author_name: James Blair
+author_email: james@rstudio.com
+author_organization: RStudio
+website: https://www.rstudio.com/
+
+icon:
+  file: default_icon.png
+  package: shinytableau
+
+permissions: full data
+
+min_api_version: '1.4'
+

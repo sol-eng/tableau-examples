@@ -9,3 +9,4 @@ rsconnect*/
 .vscode
 __pycache__/
 .Renviron
+.DS_Store

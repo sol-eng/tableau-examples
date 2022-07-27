@@ -1,0 +1,48 @@
+---
+title: "Data Prep"
+format: html
+editor: visual
+---
+
+```{r setup}
+# Packages ----
+library(tidyverse)
+```
+
+```{r data}
+music <- read_csv("../data/music-genre-raw.csv")
+```
+
+Explore data
+
+```{r}
+# Number of Genre counts
+music |> 
+  count(music_genre) |> 
+  arrange(n)
+```
+
+Remove missing genre values
+
+```{r}
+music <- music |> 
+  filter(!is.na(music_genre))
+```
+
+Explore distribution of each feature
+
+```{r}
+music |> 
+  select_if(is.numeric) |> 
+  select(-instance_id) |> 
+  pivot_longer(cols = everything(), names_to = "feature") |> 
+  ggplot(aes(x = feature, y = value)) +
+  geom_boxplot() + 
+  facet_wrap(~feature, scales = "free")
+```
+
+Write out updated data
+
+```{r}
+write_csv(music, "../data/music-genre-cleaned.csv")
+```
