@@ -17,7 +17,7 @@ mccabe==0.6.1
 platformdirs==2.4.0
 pydantic==1.8.2
 pylint==2.11.1
-requests==2.26.0
+requests==2.32.0
 starlette==0.14.2
 toml==0.10.2
 typing==3.7.4.3
