@@ -1,6 +1,6 @@
 aiofiles==0.7.0
 asgiref==3.4.1
-certifi==2021.5.30
+certifi==2024.7.4
 charset-normalizer==2.0.6
 click==8.0.1
 commonmark==0.9.1
@@ -28,3 +28,4 @@ typing==3.7.4.3
 typing-extensions==3.10.0.2
 urllib3==1.26.7
 uvicorn==0.15.0
+zipp>=3.19.1 # not directly required, pinned by Snyk to avoid a vulnerability
