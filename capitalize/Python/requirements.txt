@@ -18,7 +18,7 @@ platformdirs==2.4.0
 pydantic==1.8.2
 pylint==2.11.1
 requests==2.26.0
-starlette==0.14.2
+starlette==0.47.2
 toml==0.10.2
 typing==3.7.4.3
 typing-extensions==3.10.0.2
