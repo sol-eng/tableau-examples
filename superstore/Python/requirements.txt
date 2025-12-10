@@ -26,5 +26,5 @@ starlette==0.14.2
 threadpoolctl==2.2.0
 typing==3.7.4.3
 typing-extensions==3.10.0.2
-urllib3==1.26.7
+urllib3==2.6.0
 uvicorn==0.15.0
